@@ -36,7 +36,8 @@ class Graph {
     adjMatrix[j][i] = false;
   }
 
-  // Print matrix
+
+  // Print
   void print() {
     for (int i = 0; i < numVertices; i++) {
       cout << i << " : ";
@@ -48,13 +49,24 @@ class Graph {
 
   //encontrar todos os vizinhos
   void findNeighbors(int row){
-    cout << row << " : ";
+    cout << "vizinhos do vertice " << row << " : ";
     for(int j = row; j <= row; j++){
         for(int i = 0; i < numVertices; i++){
             cout << adjMatrix[j][i] << " ";
         }
         cout << "\n";
     }
+  }
+
+  void countEdges(){
+    int totalEdges = 0;
+    for (int i = 0; i < numVertices; i++) {
+      for (int j = 0; j < numVertices; j++)
+        if (adjMatrix[i][j] == true){
+            totalEdges++;
+        }
+    }
+    cout << "total de arestas:" << totalEdges/2 << "\n";
   }
 
   ~Graph() {
@@ -77,4 +89,5 @@ int main() {
   //printf("aqui");
   g.print();
   g.findNeighbors(2);
+  g.countEdges();
 }
