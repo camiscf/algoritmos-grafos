@@ -50,7 +50,7 @@ class Graph {
   //encontrar todos os vizinhos
   void findNeighbors(int row){
     cout << "vizinhos do vertice " << row << " : ";
-    for(int j = row; j <= row; j++){
+    if(int j = row){
         for(int i = 0; i < numVertices; i++){
             cout << adjMatrix[j][i] << " ";
         }
